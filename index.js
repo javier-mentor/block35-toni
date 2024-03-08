@@ -82,7 +82,8 @@ const init = async()=> {
         createProduct({ name: 'desk'}),
         createProduct({ name: 'lamp'})
     ]);
-    console.log(Tom.id, Tom.username1, Tom.pasword)
+    console.log("HERE")
+    console.log(Tom.id, Tom.username1, Tom.password)
     console.log(await fetchUser());
     console.log(await fetchProduct());
     
@@ -93,7 +94,7 @@ const init = async()=> {
     ]);
 
     console.log(await fetchUserFavorite(Tom.id));
-    await destroyUserFavorite ({user_id, product})
+   // await destroyUserFavorite ({user_id, product})
     console.log(await fetchUserFavorite(Tom.id));
     await destroyUserFavorite({ user_id: Tom.id, id: product[0].id})
     console.log (await fetchUserFavorite(Tom_id));
@@ -106,6 +107,7 @@ const init = async()=> {
     console.log(`curl -X DELETE localhost:3000/api/user/${Tom.id}/userFavorite_id_here`);
 
     console.log('data seeded');
+
 
     const PORT=3000;
     const port=process.env.PORT ||3000;
